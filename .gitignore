@@ -1,2 +1,25 @@
-# Test output files
-test/
+# Python stuff
+__pycache__/
+*.py[cod]
+
+# Local env
+.env
+
+# Python virtualenv
+venv/
+
+# Setuptools distribution folder.
+dist/
+
+# Python egg metadata, regenerated from source files by setuptools.
+*.egg-info
+
+# Package build directory
+build/
+
+# Project temp dir files
+tmp/*
+
+# Coverage report
+.coverage
+
