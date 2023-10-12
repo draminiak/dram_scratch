@@ -1,0 +1,108 @@
+
+Resource vs Project on/off-boarding
+Material employees vs Contractors
+
+THIS project tracking
+Project artifacts : helpdesk page, confluence, etc
+
+
+* Pre-requisite
+Jennifer Zuck / Sarah Hall
+
+
+== IT ==
+Gmail / SSO
+VPN / sophos
+Team email dist list -- EX: devops@t-3.com
+
+== Digital Workplace ==
+Miro : Material team
+
+
+Gitlab
+Jira : Any specific projects?
+Confluence : T3T, DevOps... etc?
+1Password ?
+Postman
+Slack
+
+* When/If necessary (devops team should have all 3 by default)
+OpsGenie
+Aws : t3-dev
+Azure : t3-dev
+
+technology ooo calendar sync with Workday
+
+cdk
+cdktf
+
+
+TODO
+Aws & Azure logins (T3, not client) should come from LDAP
+- What else can use LDAP for access-control?
+- What else could use Google SSO?
+
+
+SCRIPT :
+
+== maybe ==
+install iterm2
+chsh -s /bin/bash
+
+== then ==
+install brew
+* https://treehouse.github.io/installation-guides/mac/homebrew
+* /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
+brew update
+brew install pyenv pyenv-virtualenv pipenv
+brew install postman
+brew install azure-cli
+brew install awscli
+brew install zsh-completions
+brew install nvm wget
+brew install jq composer
+brew install git bash-completion
+brew install gcc
+brew install --cask docker
+brew install --cask dotnet-sdk
+dotnet --list-sdks
+npm i -g lighthouse yalc
+npm i -g npx typescript yarn
+npm - -g aws-cdk@^2.1.0
+
+# k8s
+brew install minikube
+brew install helm
+brew install sops
+helm repo add bitnami https://charts.bitnami.com/bitnami
+helm plugin install https://github.com/jkroepke/helm-secrets
+minikube start --profile msl --driver=virtualbox --kubernetes-version v1.19.0
+brew install kubectl
+brew install kubernetes-cli
+brew install kubectx
+brew install watch
+
+# Aws session manager
+https://docs.aws.amazon.com/systems-manager/latest/userguide/session-manager-working-with-install-plugin.html
+
+# PyCharm
+https://account.jetbrains.com/licenses
+
+# VIRTUALBOX : https://www.virtualbox.org/wiki/Mac%20OS%20X%20build%20instructions
+
+
+
+AKIA37FVKAHYZUDGSBM3
+6HWD2FaeW8/LuaZtfRbTPACz5XUpem84hAYOeSaL
+
+kubens
+kubectx
+kubectl get pods
+kubectl get nodes
+kubectl get hpa
+kubectl get hpa msl -o yaml
+kubectl get secrets
+kubectl get configmap
+kubectl get configmap msl-config
+kubectl get configmap msl-config -o yaml
+kubectl logs msl-c8454d69-jrwjv -c application --follow
