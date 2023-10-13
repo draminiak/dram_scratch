@@ -1,7 +1,0 @@
-.yarn
-.yarn-cache
-cdk.out
-node_modules
-lib/stacks/*.d.ts
-lib/stacks/*.js
-
