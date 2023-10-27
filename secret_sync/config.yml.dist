@@ -1,0 +1,18 @@
+
+# Target key/value pair var store - [ aws | azure ]
+target: aws
+
+
+# The below are used to validate the script option for 1pass tag filter (dictated by project requirements)
+
+# 1Password vault item "application tag" definition
+app:
+  - infra
+  - web
+
+# 1Password vault item "deployEnv tag" definition
+env:
+  - devops
+  - dev
+  - stage
+  - prod

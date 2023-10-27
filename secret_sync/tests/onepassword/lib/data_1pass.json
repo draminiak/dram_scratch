@@ -1,0 +1,56 @@
+{
+  "single_input_secret_exists": {
+    "secret_store": {
+      "name": "testSecret",
+      "exists": "True"
+    },
+    "variables": {
+      "ENV_TEST_1": {"label": "ENV_TEST_1", "value": "True", "type": "String"}
+    },
+    "expect": {
+      "local": {"file": "testSecret", "mode": "w", "encoding": "UTF-8"},
+      "aws": {"SecretString": "{\"ENV_TEST_1\": \"True\"}", "SecretId": "testSecret"},
+      "azure": {
+        "ENV_TEST_1": {"secret_name": "ENV-TEST-1", "secret_value": "True", "content_type": "text/plain"}
+      }
+    }
+  },
+  "multi_input_secret_exists": {
+    "secret_store": {
+      "name": "testSecret",
+      "exists": "True"
+    },
+    "variables": {
+      "ENV_TEST_1": {"label": "ENV_TEST_1", "value": "True", "type": "String"},
+      "ENV_TEST_2": {"label": "ENV_TEST_2", "value": "my string", "type": "CONCEALED"}
+    },
+    "expect": {
+      "local": {"file": "testSecret", "mode": "w", "encoding": "UTF-8"},
+      "aws": {"SecretString": "{\"ENV_TEST_1\": \"True\", \"ENV_TEST_2\": \"my string\"}", "SecretId": "testSecret"},
+      "azure": {
+        "ENV_TEST_1": {"secret_name": "ENV-TEST-1", "secret_value": "True", "content_type": "text/plain"},
+        "ENV_TEST_2": {"secret_name": "ENV-TEST-2", "secret_value": "my string", "content_type": "password"}
+      }
+    }
+  },
+  "multi_input_secret_not_exists": {
+    "secret_store": {
+      "name": "testSecret",
+      "exists": "False"
+    },
+    "variables": {
+      "ENV_TEST_1": {"label": "ENV_TEST_1", "value": "False", "type": "String"},
+      "ENV_TEST_2": {"label": "ENV_TEST_2", "value": "my string", "type": "CONCEALED"},
+      "ENV_TEST_3": {"label": "ENV_TEST_3", "value": "4", "type": "String"}
+    },
+    "expect": {
+      "local": {"file": "testSecret", "mode": "w", "encoding": "UTF-8"},
+      "aws": {"SecretString": "{\"ENV_TEST_1\": \"False\", \"ENV_TEST_2\": \"my string\", \"ENV_TEST_3\": \"4\"}", "SecretId": "testSecret"},
+      "azure": {
+        "ENV_TEST_1": {"secret_name": "ENV-TEST-1", "secret_value": "False", "content_type": "text/plain"},
+        "ENV_TEST_2": {"secret_name": "ENV-TEST-2", "secret_value": "my string", "content_type": "password"},
+        "ENV_TEST_3": {"secret_name": "ENV-TEST-3", "secret_value": "4", "content_type": "text/plain"}
+      }
+    }
+  }
+}

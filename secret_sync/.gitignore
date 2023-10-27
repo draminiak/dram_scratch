@@ -1,0 +1,8 @@
+.env
+
+.vscode/*
+.client/
+
+**/1password-credentials.json
+**/config.yml
+
