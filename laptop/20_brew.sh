@@ -13,6 +13,8 @@ brew install awscli
 #brew install postman
 #brew install --cask docker
 
+brew install --cask sublime-text
+
 #brew install --cask dotnet-sdk
 #dotnet --list-sdks
 
