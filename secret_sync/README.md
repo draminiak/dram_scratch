@@ -1,5 +1,5 @@
 # Overview 
-Export variables from Material source-of-truth (1password) for import into specified client cloud host (aws, azure).
+Export variables from source-of-truth (1password) for import into specified client cloud host (aws, azure).
 
 ## Setup
 * Create a 1Password vault specifically for project env vars
